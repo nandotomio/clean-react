@@ -64,4 +64,14 @@ describe('Name of the group', () => {
     expect(passwordStatus.title).toBe('Ok!')
     expect(passwordStatus.textContent).toBe('✔')
   })
+
+  test('should show email state if Validation succeeds', () => {
+    const { sut, validationStub } = makeSut()
+    validationStub.errorMessage = null
+    const emailInput = sut.getByTestId('email')
+    fireEvent.input(emailInput, { target: { value: faker.internet.email() } })
+    const emailStatus = sut.getByTestId('email-status')
+    expect(emailStatus.title).toBe('Ok!')
+    expect(emailStatus.textContent).toBe('✔')
+  })
 })
