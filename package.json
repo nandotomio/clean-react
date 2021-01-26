@@ -1,8 +1,9 @@
 {
   "name": "clean-react",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.1",
+  "description": "ReactJs Web App using Hooks, Typescript, TDD, Clean Architecture, Design Patterns e SOLID principles",
+  "author": "",
+  "license": "GNU GPL3",
   "scripts": {
     "start": "webpack-cli serve --open --mode development",
     "test": "jest --passWithNoTests --no-cache --runInBand",
@@ -10,9 +11,6 @@
     "test:staged": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@testing-library/react": "^11.2.3",
     "@types/axios": "^0.14.0",
