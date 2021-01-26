@@ -1,1 +1,1 @@
-export const makeApiUrl = (): string => 'https://clean-node-api-project.herokuapp.com/api/login'
+export const makeApiUrl = (path: string): string => `https://clean-node-api-project.herokuapp.com/api${path}`
