@@ -83,7 +83,7 @@ const testButtonIsDisabled = (sut: RenderResult, fieldName: string, isDisabled: 
   expect(button.disabled).toBe(isDisabled)
 }
 
-describe('Name of the group', () => {
+describe('Login Component', () => {
   afterEach(cleanup)
 
   test('should start with initial state', () => {
