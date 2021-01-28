@@ -5,3 +5,4 @@ export { default as LoginHeader } from '@/presentation/components/login-header/l
 export { default as Logo } from '@/presentation/components/logo/logo'
 export { default as Spinner } from '@/presentation/components/spinner/spinner'
 export { default as Router } from '@/presentation/components/router/router'
+export { default as SubmitButton } from '@/presentation/components/submit-button/submit-button'
