@@ -1,4 +1,4 @@
-import Styles from './survey-item-styles.scss'
+import Styles from './item-styles.scss'
 import React from 'react'
 
 const SurveyItemEmpty: React.FC = () => {
