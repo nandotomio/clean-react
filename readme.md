@@ -3,6 +3,8 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
+[![dependencies Status](https://status.david-dm.org/gh/nandotomio/clean-react.svg)](https://david-dm.org/nandotomio/clean-react)
+[![devDependencies Status](https://status.david-dm.org/gh/nandotomio/clean-react.svg?type=dev)](https://david-dm.org/nandotomio/clean-react?type=dev)
 
 # **React Web App Project - Implementing a Developer Survey**
 
