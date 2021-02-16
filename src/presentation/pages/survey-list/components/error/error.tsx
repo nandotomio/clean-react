@@ -5,7 +5,7 @@ import Styles from './error-styles.scss'
 const Error: React.FC = () => {
   const { state, setState } = useContext(SurveyContext)
   const reload = (): void => {
-    setState({ surveys: [], error: '', reload: !state.reload })
+    setState(old => ({ surveys: [], error: '', reload: !old.reload }))
   }
 
   return (
