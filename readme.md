@@ -1,10 +1,11 @@
 [![Build Status](https://travis-ci.org/nandotomio/clean-react.svg?branch=master)](https://travis-ci.org/nandotomio/clean-react)
 [![Coverage Status](https://coveralls.io/repos/github/nandotomio/clean-react/badge.svg?branch=master)](https://coveralls.io/github/nandotomio/clean-react?branch=master)
+[![Known Vulnerabilities](https://snyk.io/test/github/nandotomio/clean-react/badge.svg)](https://snyk.io/test/github/nandotomio/clean-react)
+[![dependencies Status](https://status.david-dm.org/gh/nandotomio/clean-react.svg)](https://david-dm.org/nandotomio/clean-react)
+[![devDependencies Status](https://status.david-dm.org/gh/nandotomio/clean-react.svg?type=dev)](https://david-dm.org/nandotomio/clean-react?type=dev)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
-[![dependencies Status](https://status.david-dm.org/gh/nandotomio/clean-react.svg)](https://david-dm.org/nandotomio/clean-react)
-[![devDependencies Status](https://status.david-dm.org/gh/nandotomio/clean-react.svg?type=dev)](https://david-dm.org/nandotomio/clean-react?type=dev)
 
 # **React Web App Project - Implementing a Developer Survey**
 
