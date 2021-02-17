@@ -27,7 +27,6 @@ const makeSut = (loadSurveyListSpy = new LoadSurveyListSpy()): SutTypes => {
         <SurveyList loadSurveyList={loadSurveyListSpy} />
       </Router>
     </ApiContext.Provider>
-
   )
   return {
     history,
