@@ -201,14 +201,20 @@ describe('SurveyResult Component', () => {
     expect(screen.queryByTestId('loading')).not.toBeInTheDocument()
   })
 
-  test('should prevent multiple answer click', async () => {
-    const { saveSurveyResultSpy } = makeSut()
+  test('Should prevent multiple answer click', async () => {
+    const initialState = {
+      isLoading: true,
+      error: '',
+      surveyResult: null,
+      reload: false
+    }
+    const { saveSurveyResultSpy } = makeSut({ initialState })
     await waitFor(() => screen.getByTestId('survey-result'))
-    const answerWrap = screen.queryAllByTestId('answer-wrap')
-    fireEvent.click(answerWrap[1])
+    const answersWrap = screen.queryAllByTestId('answer-wrap')
+
+    fireEvent.click(answersWrap[1])
     await waitFor(() => screen.getByTestId('survey-result'))
-    fireEvent.click(answerWrap[1])
-    await waitFor(() => screen.getByTestId('survey-result'))
-    expect(saveSurveyResultSpy.callsCount).toBe(1)
+
+    expect(saveSurveyResultSpy.callsCount).toBe(0)
   })
 })
