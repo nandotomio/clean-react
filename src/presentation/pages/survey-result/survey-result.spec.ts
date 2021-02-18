@@ -1,13 +1,13 @@
-import { AccessDeniedError, UnexpectedError } from '@/domain/errors'
-import { AccountModel } from '@/domain/models'
-import { LoadSurveyResultSpy, mockAccountModel, mockSurveyResultModel, SaveSurveyResultSpy } from '@/domain/test'
 import { SurveyResult } from '@/presentation/pages'
-import { fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { renderWithHistory } from '@/presentation/test'
+import { LoadSurveyResultSpy, SaveSurveyResultSpy, mockSurveyResultModel } from '@/domain/test'
+import { UnexpectedError, AccessDeniedError } from '@/domain/errors'
+import { AccountModel } from '@/domain/models'
+
+import { screen, waitFor, fireEvent } from '@testing-library/react'
 import { createMemoryHistory, MemoryHistory } from 'history'
-import { Router } from 'react-router-dom'
-import { RecoilRoot } from 'recoil'
-import React from 'react'
-import { currentAccountState } from '@/presentation/components'
+import { LoadSurveyResult } from '@/domain/usecases'
+import { surveyResultState } from './components'
 
 type SutTypes = {
   loadSurveyResultSpy: LoadSurveyResultSpy
@@ -19,25 +19,21 @@ type SutTypes = {
 type SutParams = {
   loadSurveyResultSpy?: LoadSurveyResultSpy
   saveSurveyResultSpy?: SaveSurveyResultSpy
+  initialState?: {
+    isLoading: boolean
+    error: string
+    surveyResult: LoadSurveyResult.Model
+    reload: boolean
+  }
 }
 
-const makeSut = ({
-  loadSurveyResultSpy = new LoadSurveyResultSpy(),
-  saveSurveyResultSpy = new SaveSurveyResultSpy()
-}: SutParams = {}): SutTypes => {
+const makeSut = ({ loadSurveyResultSpy = new LoadSurveyResultSpy(), saveSurveyResultSpy = new SaveSurveyResultSpy(), initialState = null }: SutParams = {}): SutTypes => {
   const history = createMemoryHistory({ initialEntries: ['/', '/surveys/any_id'], initialIndex: 1 })
-  const setCurrentAccountMock = jest.fn()
-  const mockedState = { setCurrentAccount: setCurrentAccountMock, getCurrentAccount: () => mockAccountModel() }
-  render(
-    <RecoilRoot initializeState={({ set }) => set(currentAccountState, mockedState)}>
-        <Router history={history}>
-          <SurveyResult
-            loadSurveyResult={loadSurveyResultSpy}
-            saveSurveyResult={saveSurveyResultSpy}
-          />
-        </Router>
-    </RecoilRoot>
-  )
+  const { setCurrentAccountMock } = renderWithHistory({
+    history,
+    Page: () => SurveyResult({ loadSurveyResult: loadSurveyResultSpy, saveSurveyResult: saveSurveyResultSpy }),
+    states: initialState ? [{ atom: surveyResultState, value: initialState }] : []
+  })
   return {
     loadSurveyResultSpy,
     saveSurveyResultSpy,
