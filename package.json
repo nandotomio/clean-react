@@ -1,6 +1,6 @@
 {
   "name": "clean-react",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "ReactJs Web App using Hooks, Typescript, TDD, Clean Architecture, Design Patterns e SOLID principles",
   "author": "",
   "license": "GNU GPL3",
