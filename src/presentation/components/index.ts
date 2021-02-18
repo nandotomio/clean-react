@@ -11,3 +11,4 @@ export { default as Calendar } from '@/presentation/components/calendar/calendar
 export { default as Error } from '@/presentation/components/error/error'
 export { default as SubmitButtonBase } from '@/presentation/components/submit-button/submit-button'
 export { default as PrivateRoute } from '@/presentation/components/private-route/private-route'
+export * from './atoms/atoms'
